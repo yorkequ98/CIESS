@@ -1,0 +1,47 @@
+import torch
+
+BATCH_SIZE = 10000
+OU_STD_DEV = 40.0
+TAU = 0.005
+MAX_EMB_SIZE = round(128)
+MIN_EMB_SIZE = 1
+RANDOM_WALK_STEPS = 5
+SAMPLE_SIZE = 1024 * 4
+STATE_SIZE = 3
+T = 11
+ACTION_SIZE = 1
+SAMPLING_RATIO_USER = 1.0
+SAMPLING_RATIO_ITEM = 1.0
+MAX_PATIENCE = 2
+GPU = torch.cuda.is_available()
+device = torch.device('cuda' if GPU else "cpu")
+SEED = 42
+M = 30
+
+# Default column names
+DEFAULT_USER_COL = "userID"
+DEFAULT_ITEM_COL = "itemID"
+DEFAULT_RATING_COL = "rating"
+DEFAULT_LABEL_COL = "label"
+DEFAULT_TITLE_COL = "title"
+DEFAULT_GENRE_COL = "genre"
+DEFAULT_RELEVANCE_COL = "relevance"
+DEFAULT_TIMESTAMP_COL = "timestamp"
+DEFAULT_PREDICTION_COL = "prediction"
+DEFAULT_SIMILARITY_COL = "sim"
+DEFAULT_ITEM_FEATURES_COL = "features"
+DEFAULT_ITEM_SIM_MEASURE = "item_cooccurrence_count"
+
+DEFAULT_HEADER = (
+    DEFAULT_USER_COL,
+    DEFAULT_ITEM_COL,
+    DEFAULT_RATING_COL,
+    DEFAULT_TIMESTAMP_COL,
+)
+
+COL_DICT = {
+    "col_user": DEFAULT_USER_COL,
+    "col_item": DEFAULT_ITEM_COL,
+    "col_rating": DEFAULT_RATING_COL,
+    "col_prediction": DEFAULT_PREDICTION_COL,
+}
